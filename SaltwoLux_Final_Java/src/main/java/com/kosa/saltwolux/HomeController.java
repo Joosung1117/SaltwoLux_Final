@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
+ * 도큐먼트 생성용 주석
+ * 클래스 위
  * Handles requests for the application home page.
  */
 @Controller
