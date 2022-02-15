@@ -24,10 +24,10 @@ public class MemberRepository implements IMemberRepository{
 		jdbcTemplate.update(sql, memberVO.getMemberNum(), memberVO.getMemberId(), memberVO.getMemberPw(), memberVO.getMemberName(), memberVO.getMemberPhone());
 	}
 	
-	// userNum 자동 증가
+	// memberNum 자동 증가
 	@Override
 	public String getMemberNum() {
-		String sql = "select nvl(max(SUBSTR(user_num, length(user_num), length(user_num))),0) as user_num from user";
+		String sql = "select nvl(max(SUBSTR(member_num, length(member_num), length(member_num))),0) as member_num from member";
 		int intResult = jdbcTemplate.queryForObject(sql, Integer.class) + 1;
 		String strResult = String.format("$04d", intResult);
 		return strResult;
